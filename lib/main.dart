@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:smart_canteen/UI/HomeScreen.dart';
 import 'package:smart_canteen/UI/LoginScreen.dart';
+import 'package:smart_canteen/UI/SignUpScreen.dart';
 
 
 void main() {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
