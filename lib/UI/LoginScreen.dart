@@ -4,6 +4,7 @@
 // import 'package:svg_icon/svg_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_canteen/UI/SignUpScreen.dart';
 
 class LoginScreen extends StatefulWidget{
   @override
@@ -121,7 +122,9 @@ class _LoginScreenState extends State<LoginScreen>{
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                      onPressed: (){},
+                      onPressed: (){
+
+                      },
                       child: Text("Quên mật khẩu ?",
                         style: TextStyle(letterSpacing: 0.4,
                             color: Colors.blue,
@@ -156,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen>{
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text("Login",
+                              Text("Đăng Nhập",
                                   style: TextStyle(fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                     fontFamily: 'RobotoMono',
@@ -192,7 +195,6 @@ class _LoginScreenState extends State<LoginScreen>{
                       //     mainAxisSize: MainAxisSize.min,
                       //     children: [
                       //       // SvgIcon("assets/icons/icons8-touch_id.svg",width: 50,height: 30,)
-                      //       Ima
                       //     ],
                       //   ),
                       // ),
@@ -216,7 +218,7 @@ class _LoginScreenState extends State<LoginScreen>{
                             ),),),
                         TextButton(
                             onPressed: (){
-                              // Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage()));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUpScreen()));
                             },
                             child: Text("Đăng ký",
                               style: TextStyle(
