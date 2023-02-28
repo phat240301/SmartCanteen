@@ -7,9 +7,9 @@ class AppBanner{
 }
 
 List<AppBanner> appBannerList = [
-  AppBanner(1, 'Title', 'https://docs.google.com/uc?id=1A_UaeV6Dpy5DWDN-m1wRH5z-t4cU8hXq'),
-  AppBanner(2, 'Title', 'https://docs.google.com/uc?id=1A_UaeV6Dpy5DWDN-m1wRH5z-t4cU8hXq'),
-  AppBanner(3, 'Title', 'https://docs.google.com/uc?id=1A_UaeV6Dpy5DWDN-m1wRH5z-t4cU8hXq'),
-  AppBanner(4, 'Title', 'https://docs.google.com/uc?id=1A_UaeV6Dpy5DWDN-m1wRH5z-t4cU8hXq'),
-  AppBanner(5, 'Title', 'https://docs.google.com/uc?id=1A_UaeV6Dpy5DWDN-m1wRH5z-t4cU8hXq'),
+  AppBanner(1, 'Title', 'images/user_test.jpg'),
+  AppBanner(2, 'Title', 'images/user_test.jpg'),
+  AppBanner(3, 'Title', 'images/user_test.jpg'),
+  AppBanner(4, 'Title', 'images/user_test.jpg'),
+  AppBanner(5, 'Title', 'images/user_test.jpg'),
 ];
