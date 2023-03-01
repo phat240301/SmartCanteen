@@ -44,7 +44,6 @@ class _MenuScreenState extends State<MenuScreen> {
     var _selectedIndex = 0;
     // TODO: implement build
     return Scaffold(
-
       body: Column(
           children: [
             Stack(
@@ -145,13 +144,120 @@ class _MenuScreenState extends State<MenuScreen> {
                           alignment: Alignment.topLeft,
                           child: Padding(
                             padding: EdgeInsets.only(top: 20,left: 10,right: 10,bottom: 10),
-                            child: Text("Lịch sử",style: TextStyle(
+                            child: Text("Menu",style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: 'RobotoMono'
                             ),textAlign: TextAlign.start),
                           )
+                      ),
+                      /////////////// item in list menu
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        width: MediaQuery.of(context).size.width,
+                        height: 150,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              side: BorderSide.none
+                          ),
+                          elevation: 20,
+                          color: Colors.white,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(padding: EdgeInsets.all(10),child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset('images/user_test.jpg',height: 100,width: 100,fit: BoxFit.fill,)
+                              ),),
+                              SizedBox(
+                                height: MediaQuery.of(context).size.height,
+                                width: 140,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 20,),
+                                    Text("Cơm Sườn",style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'RobotoMono'
+                                    ),textAlign: TextAlign.start),
+                                    SizedBox(height: 10,),
+                                    Text("32.000 đ",style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'RobotoMono'
+                                    ),textAlign: TextAlign.start),
+                                    SizedBox(height: 10,),
+                                    Text("100/150 phần",style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'RobotoMono'
+                                    ),textAlign: TextAlign.start),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 40,
+                                margin: EdgeInsets.only(right: 10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25),
+                                  border: Border.all(
+                                    width: 1.2,
+                                    color: Colors.blue
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      width: 30,
+                                      padding: EdgeInsets.only(right: 5),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.only(topLeft: Radius.circular(15),bottomLeft: Radius.circular(15)),
+                                        color: Colors.blue,
+                                      ),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: IconButton(
+                                            iconSize: 18,
+                                            onPressed: () {
+
+                                            }, icon: Icon(Icons.remove)),
+                                      )
+                                    ),
+                                    Container(
+                                      width: 26,
+                                      child: Text("0",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                                          textAlign: TextAlign.center,),
+                                    ),
+                                    Container(
+                                      width: 33,
+                                      padding: EdgeInsets.only(right: 5),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.only(topRight: Radius.circular(15),bottomRight: Radius.circular(15)),
+                                        color: Colors.blue,
+                                      ),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: IconButton(
+                                            iconSize: 18,
+                                            onPressed: () {
+
+                                            }, icon: Icon(Icons.add)),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                                ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   )
@@ -185,6 +291,50 @@ class _MenuScreenState extends State<MenuScreen> {
                       hintStyle:
                       TextStyle(color: Colors.black54, fontSize: 16),
                     ),),),
+
+                ///////// Add to cart
+                Container(
+                  height: 80,
+                  margin: EdgeInsets.only(top: 725),
+                  padding: EdgeInsets.only(left: 15,right: 10,top: 15,bottom: 10),
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.blue
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Tổng :",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18,fontFamily: 'RobotoMôn')),
+                              Padding(padding: EdgeInsets.only(left: 10,top: 5),child: Text("2 món",style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 14,fontFamily: 'RobotoMono'))),
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.only(left: 20,top: 10),child: Text("70.000",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20,fontFamily: 'RobotoMôn'))),
+                        ],
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child:
+                        Row(
+                          children: [
+                            Text("Giỏ hàng",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22,fontFamily: 'RobotoMôn')),
+                            SizedBox(width: 10,),
+                            Icon(Icons.arrow_circle_right_rounded,color: Colors.white,size: 25,)
+                          ],
+                        ),
+
+                      )
+                    ],
+                  ),
+                )
             ],),],)
     );
   }
