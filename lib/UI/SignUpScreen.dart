@@ -200,6 +200,7 @@ class _SignUpScreenState extends State<SignUpScreen>{
                     children: [
                       ElevatedButton(
                         onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
                         },
                         style: ButtonStyle(
                             elevation: MaterialStateProperty.all(5),

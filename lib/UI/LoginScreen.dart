@@ -4,6 +4,7 @@
 // import 'package:svg_icon/svg_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_canteen/UI/HomeScreen.dart';
 import 'package:smart_canteen/UI/SignUpScreen.dart';
 
 class LoginScreen extends StatefulWidget{
@@ -141,6 +142,7 @@ class _LoginScreenState extends State<LoginScreen>{
                     children: [
                       ElevatedButton(
                         onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(),));
                         },
                         style: ButtonStyle(
                             elevation: MaterialStateProperty.all(5),
@@ -154,7 +156,9 @@ class _LoginScreenState extends State<LoginScreen>{
                             ))
                         ),
                         child:GestureDetector(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(),));
+                          },
                           child:
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -177,27 +181,6 @@ class _LoginScreenState extends State<LoginScreen>{
                         ),
                       ),
                       SizedBox(width: 15,),
-                      // ElevatedButton(
-                      //   onPressed: () {
-                      //   },
-                      //   style: ButtonStyle(
-                      //       elevation: MaterialStateProperty.all(5),
-                      //       padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 10,vertical: 15)),
-                      //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      //         borderRadius: BorderRadius.circular(35),
-                      //         side: BorderSide(
-                      //             width: 2,
-                      //             color: Colors.blue
-                      //         ),
-                      //       ))
-                      //   ),
-                      //   child: Row(
-                      //     mainAxisSize: MainAxisSize.min,
-                      //     children: [
-                      //       // SvgIcon("assets/icons/icons8-touch_id.svg",width: 50,height: 30,)
-                      //     ],
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),

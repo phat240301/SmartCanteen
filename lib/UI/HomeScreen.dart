@@ -1,5 +1,9 @@
+import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_canteen/UI/MenuScreen.dart';
+import 'package:smart_canteen/UI/ProfileScreen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,11 +13,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        body: Column(
+      body:SingleChildScrollView(
+        child:  Column(
           children: [
             Container(
               height: 50,
@@ -32,10 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontFamily: 'RobotoMono'
                     )),
                   ),
-                  ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: Image.asset('images/user_test.jpg',height: 50,width: 50,)
-                  ),
+                  InkWell(
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.asset('images/user_test.jpg',height: 50,width: 50,)
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileScreen(),));
+                    },
+                  )
                 ],
               ),
             ),
@@ -76,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.white,
                                 fontSize: 26,
                                 fontWeight: FontWeight.bold,
-                              fontFamily: 'RobotoMono'
+                                fontFamily: 'RobotoMono'
                             ),textAlign: TextAlign.start),
                             SizedBox(height: 10),
                           ],
@@ -99,16 +110,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: EdgeInsets.only(top: 20,left: 10,right: 10,bottom: 10),
-                child: Text("Lịch sử",style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'RobotoMono'
-                ),textAlign: TextAlign.start),
-              )
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 20,left: 10,right: 10,bottom: 10),
+                  child: Text("Lịch sử",style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'RobotoMono'
+                  ),textAlign: TextAlign.start),
+                )
             ),
             Container(
               padding: EdgeInsets.only(top: 10,right: 10,left: 10),
@@ -116,8 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 100,
               child: Card(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  side: BorderSide.none
+                    borderRadius: BorderRadius.circular(15),
+                    side: BorderSide.none
                 ),
                 elevation: 20,
                 color: Colors.white,
@@ -312,6 +323,62 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.transparent,
+        padding: EdgeInsets.only(bottom: 10,top: 10),
+        child: CustomNavigationBar(
+          iconSize: 30.0,
+          selectedColor: Colors.white,
+          strokeColor: Colors.red,
+          unSelectedColor: Colors.grey[600],
+          backgroundColor: Colors.black,
+          borderRadius: Radius.circular(20.0),
+          blurEffect: true,
+          opacity: 0.8,
+          items: [
+            CustomNavigationBarItem(
+              icon: Icon(
+                  Icons.home
+              ),
+            ),
+            CustomNavigationBarItem(
+              showBadge: true,
+              badgeCount: 5,
+              icon: Icon(
+                  Icons.shopping_cart
+              ),
+              selectedIcon: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => MenuScreen()));
+                },
+              )
+            ),
+            CustomNavigationBarItem(
+              icon: Icon(
+                  Icons.cloud_download
+              ),
+            ),
+            CustomNavigationBarItem(
+              icon: Icon(
+                  Icons.search
+              ),
+            ),
+            CustomNavigationBarItem(
+              icon: Icon(
+                  Icons.account_circle
+              ),
+            ),
+          ],
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          isFloating: true,
+        ),
+      ),
     );
   }
 

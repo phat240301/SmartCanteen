@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_canteen/UI/HomeScreen.dart';
+import 'package:smart_canteen/UI/LoginScreen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -21,11 +23,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                begin: Alignment.topLeft,
                end: Alignment.topRight,
                colors: <Color>[
-                 Color(0xffff492a),
-                 Color(0xffff5e1c),
-                 Color(0xffff5e1c),
-                 Color(0xfffd9401),
-                 Color(0xffff9402),
+                 Color(0xfffaa727),
+                 Color(0xfff9a423),
+                 Color(0xfff79c18),
+                 Color(0xfff39511),
+                 Color(0xfff08e09),
                ],
                tileMode: TileMode.mirror),
          ),
@@ -34,7 +36,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
            children: [
              Positioned(top: 50,
                left: 10,
-               child: Icon(Icons.arrow_back,color: Colors.white),),
+               child: InkWell(
+                 onTap: () {
+                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(),));
+                 },
+                 child: Icon(Icons.arrow_back,color: Colors.white),),
+               ),
              Container(
                alignment: Alignment.topCenter,
                padding: EdgeInsets.only(top: 80),
@@ -159,13 +166,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                      )
                    )),
              Positioned(top: 240, bottom:510,left: 50,right:50,child: ElevatedButton(
-               child: Text("Trở về",style: TextStyle(
+               child: Text("Đăng xuất",style: TextStyle(
                  fontSize: 20,
                  fontWeight: FontWeight.bold,
                  fontFamily: 'RobotoMono',
                  letterSpacing: 1.0,
                )),
                onPressed: () {
+                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen(),));
                },
                style: ButtonStyle(
                    elevation: MaterialStateProperty.all(5),

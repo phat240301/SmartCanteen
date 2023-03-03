@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:smart_canteen/UI/CartScreen.dart';
+import 'package:smart_canteen/UI/HomeScreen.dart';
 import 'package:smart_canteen/plugin/appbanner.dart';
 import 'package:smart_canteen/plugin/indicator.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -69,7 +71,12 @@ class _MenuScreenState extends State<MenuScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Icons.arrow_back,color: Colors.white,),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(),));
+                        },
+                        child: Icon(Icons.arrow_back,color: Colors.white,),
+                      ),
                       Icon(Icons.filter_alt,color: Colors.white,),
                     ],
                   ),
@@ -202,6 +209,7 @@ class _MenuScreenState extends State<MenuScreen> {
                                   ],
                                 ),
                               ),
+                              /////// button remove and add product
                               Container(
                                 height: 40,
                                 margin: EdgeInsets.only(right: 10),
@@ -227,7 +235,6 @@ class _MenuScreenState extends State<MenuScreen> {
                                         child: IconButton(
                                             iconSize: 18,
                                             onPressed: () {
-
                                             }, icon: Icon(Icons.remove)),
                                       )
                                     ),
@@ -322,15 +329,18 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       Align(
                         alignment: Alignment.center,
-                        child:
-                        Row(
-                          children: [
-                            Text("Giỏ hàng",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22,fontFamily: 'RobotoMôn')),
-                            SizedBox(width: 10,),
-                            Icon(Icons.arrow_circle_right_rounded,color: Colors.white,size: 25,)
-                          ],
-                        ),
-
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CartScreen(),));
+                          },
+                          child: Row(
+                            children: [
+                              Text("Giỏ hàng",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22,fontFamily: 'RobotoMôn')),
+                              SizedBox(width: 10,),
+                              Icon(Icons.arrow_circle_right_rounded,color: Colors.white,size: 25,)
+                            ],
+                          ),
+                        )
                       )
                     ],
                   ),
