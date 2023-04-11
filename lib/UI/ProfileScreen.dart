@@ -44,29 +44,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                ),
              Container(
                alignment: Alignment.topCenter,
-               padding: EdgeInsets.only(top: 80),
+               padding: EdgeInsets.only(top: 60),
                child: Column(
                  children: [
                    ClipRRect(
-                       borderRadius: BorderRadius.circular(50.0),
-                       child: Image.asset('images/user_test.jpg',height: 100,width: 100,)
+                       borderRadius: BorderRadius.circular(80.0),
+                       child: Image.asset('images/user_test.jpg',height: 150,width: 150,)
                    ),
                    Padding(padding: EdgeInsets.only(top: 10),child: Text("Trần Tấn Phát",style: TextStyle(
-                     fontSize: 20,
+                     fontSize: 22,
                      color: Colors.white,
                      fontWeight: FontWeight.bold,
                      fontFamily: 'RobotoMono',
-                     letterSpacing: 1.0,
+                     letterSpacing: 1.5,
                    )),),
                  ],
                )
              ),
-             Positioned(top: 270,
+             Positioned(top: 280,
                  child: Container(
                      width: MediaQuery.of(context).size.width,
                      height: MediaQuery.of(context).size.height,
-                     color: Colors.white,
                      padding: EdgeInsets.only(top: 60,left: 40),
+                     decoration: BoxDecoration(
+                       color: Colors.white,
+                       borderRadius: BorderRadius.only(
+                           topLeft: Radius.circular(30),
+                           topRight: Radius.circular(30)),
+                     ),
                      child: Column(
                        children: [
                          Align(
@@ -82,80 +87,100 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(
                           height: 10,
                         ),
-                         Padding(padding: EdgeInsets.only(top:20,left: 40), child: TextField(
+                         Padding(padding: EdgeInsets.only(top:20,left: 10), child: TextField(
                            decoration: InputDecoration(
                                enabled: false,
                                border: InputBorder.none,
                                labelText: "ID",
+                               labelStyle: TextStyle(
+                                 fontSize: 18,
+                                 fontWeight: FontWeight.bold,
+                               ),
                                prefixIcon: Icon(Icons.account_circle),
                                floatingLabelBehavior: FloatingLabelBehavior.always,
                                hintText: "1911062072",
                                hintStyle: TextStyle(
-                                 fontSize: 16,
+                                 fontSize: 20,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.black,
                                )),),),
                          SizedBox(
                            height: 10,
                          ),
-                         Padding(padding: EdgeInsets.only(left: 40),child: TextField(
+                         Padding(padding: EdgeInsets.only(left: 10),child: TextField(
                            decoration: InputDecoration(
                                enabled: false,
                                border: InputBorder.none,
                                labelText: "Email",
+                               labelStyle: TextStyle(
+                                 fontSize: 18,
+                                 fontWeight: FontWeight.bold
+                               ),
                                prefixIcon: Icon(Icons.email),
                                floatingLabelBehavior: FloatingLabelBehavior.always,
                                hintText: "abc@gmail.com",
                                hintStyle: TextStyle(
-                                 fontSize: 16,
+                                 fontSize: 20,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.black,
                                )),),),
                          SizedBox(
                            height: 10,
                          ),
-                        Padding(padding: EdgeInsets.only(left: 40),child:  TextField(
+                        Padding(padding: EdgeInsets.only(left: 10),child:  TextField(
                           decoration: InputDecoration(
                               enabled: false,
                               border: InputBorder.none,
                               labelText: "Phone number",
+                              labelStyle: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18
+                              ),
                               prefixIcon: Icon(Icons.phone_iphone),
                               floatingLabelBehavior: FloatingLabelBehavior.always,
                               hintText: "0123456789",
                               hintStyle: TextStyle(
-                                fontSize: 16,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               )),),),
                          SizedBox(
                            height: 10,
                          ),
-                        Padding(padding: EdgeInsets.only(left: 40),child:  TextField(
+                        Padding(padding: EdgeInsets.only(left: 10),child:  TextField(
                           decoration: InputDecoration(
                               enabled: false,
                               border: InputBorder.none,
                               labelText: "Address",
+                              labelStyle: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold
+                              ),
                               prefixIcon: Icon(Icons.edit_location),
                               floatingLabelBehavior: FloatingLabelBehavior.always,
                               hintText: "TP.Hồ Chí Minh",
                               hintStyle: TextStyle(
-                                fontSize: 16,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               )),),),
                          SizedBox(
                            height: 10,
                          ),
-                         Padding(padding: EdgeInsets.only(left: 40),child: TextField(
+                         Padding(padding: EdgeInsets.only(left: 10),child: TextField(
                            decoration: InputDecoration(
                                enabled: false,
                                border: InputBorder.none,
                                labelText: "D.O.B",
+                               labelStyle: TextStyle(
+                                 fontWeight: FontWeight.bold,
+                                 fontSize: 18
+                               ),
                                prefixIcon: Icon(Icons.calendar_month),
                                floatingLabelBehavior: FloatingLabelBehavior.always,
                                hintText: "24/03/2001",
                                hintStyle: TextStyle(
-                                 fontSize: 16,
+                                 fontSize: 20,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.black,
                                )),),),
@@ -165,7 +190,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                        ],
                      )
                    )),
-             Positioned(top: 240, bottom:510,left: 50,right:50,child: ElevatedButton(
+             Positioned(top: 260, bottom:490,left: 50,right:50,child: ElevatedButton(
                child: Text("Đăng xuất",style: TextStyle(
                  fontSize: 20,
                  fontWeight: FontWeight.bold,
@@ -188,9 +213,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                ),
              ),),
              Positioned(
-               top: 250, bottom:520,left: 50,
+               top: 260, bottom:490,left: 60,
                  child: CircleAvatar(
-                 radius: 30,
+                 radius: 20,
                  backgroundColor: Color(0xffffffff),
                  child: IconButton(
                    padding: EdgeInsets.all(1),
