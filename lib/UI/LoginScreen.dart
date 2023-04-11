@@ -4,7 +4,9 @@
 // import 'package:svg_icon/svg_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_canteen/UI/ForgotPassScreen.dart';
 import 'package:smart_canteen/UI/HomeScreen.dart';
+import 'package:smart_canteen/UI/HomeV2Screen.dart';
 import 'package:smart_canteen/UI/SignUpScreen.dart';
 
 class LoginScreen extends StatefulWidget{
@@ -124,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen>{
                   alignment: Alignment.centerRight,
                   child: TextButton(
                       onPressed: (){
-
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => ForgotPassScreen()));
                       },
                       child: Text("Quên mật khẩu ?",
                         style: TextStyle(letterSpacing: 0.4,
@@ -142,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen>{
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(),));
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeV2Screen(),));
                         },
                         style: ButtonStyle(
                             elevation: MaterialStateProperty.all(5),
@@ -157,7 +159,7 @@ class _LoginScreenState extends State<LoginScreen>{
                         ),
                         child:GestureDetector(
                           onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(),));
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeV2Screen(),));
                           },
                           child:
                           Row(

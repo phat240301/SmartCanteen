@@ -27,18 +27,34 @@ class _HomeV2ScreenState extends State<HomeV2Screen> {
       label: '',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.search),
+      icon: Icon(Icons.access_time_outlined,size: 25),
       label: '',
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.person,size: 25,),
       label: '',
     ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.person,size: 0,),
+      label: '',
+    ),
   ];
 
   final Widget _fab = FloatingActionButton(
     onPressed: () {},
-    child: const Icon(Icons.shopping_cart),
+    child: Stack(
+      alignment: Alignment.center,
+      children: [
+        Icon(Icons.shopping_cart,size: 30),
+        Padding(
+          padding: EdgeInsets.only(left:18,bottom: 25),
+          child: CircleAvatar(
+            radius: 10,
+            child: Text("2",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12)),
+          ),
+        )
+      ],
+    ),
   );
 
   void _onNavItemTapped(int index) {
@@ -386,10 +402,12 @@ class _HomeV2ScreenState extends State<HomeV2Screen> {
         // Set the color scheme for the bottom app bar
         color: Colors.white,
         // Set the shape of the bottom app bar
-        shape: const CircularNotchedRectangle(),
+        shape: CircularNotchedRectangle(),
         // Set the position of the floating action button
         notchMargin: 8.0,
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.shifting,
+          iconSize: 50,showSelectedLabels: false,showUnselectedLabels: false,
           // Set the index of the currently selected navigation icon
           currentIndex: _currentIndex,
           // Set the color scheme for the navigation icons
@@ -405,7 +423,7 @@ class _HomeV2ScreenState extends State<HomeV2Screen> {
       // Set the floating action button to display in the bottom app bar
       floatingActionButton: _fab,
       // Set the position of the floating action button
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
 

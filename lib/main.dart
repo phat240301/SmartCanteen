@@ -7,6 +7,7 @@ import 'package:smart_canteen/UI/ProfileScreen.dart';
 import 'package:smart_canteen/UI/SignUpScreen.dart';
 
 import 'UI/DetailFoodScreen.dart';
+import 'UI/ForgotPassScreen.dart';
 import 'UI/HomeV2Screen.dart';
 import 'UI/MenuScreen.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ProfileScreen(),
+      home: LoginScreen(),
     );
   }
 }
