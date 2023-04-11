@@ -68,7 +68,68 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                           fontFamily: 'RobotoMono'
                       ),),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 10),
+                    SizedBox(height: 60,width: MediaQuery.of(context).size.width,
+                      child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            IconButton(onPressed: () {}, icon: Icon(Icons.access_time,size: 30,color: Colors.green,)),
+                            SizedBox(
+                                width: 80,
+                                child: Align(
+                                  child: Text("15 phút",style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w800,
+                                      fontFamily: 'RobotoMono'
+                                  ),),
+                                )
+                            ),
+                          ],
+                        ),
+                        VerticalDivider(
+                          color: Colors.grey, //color of divider
+                          width: 15, //width space of divider
+                          thickness: 3, //thickness of divier line
+                          indent: 10, //Spacing at the top of divider.
+                          endIndent: 10, //Spacing at the bottom of divider.
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            IconButton(onPressed: () {}, icon: Icon(Icons.star_border_outlined,size: 35,color: Colors.yellowAccent,)),
+                            SizedBox(
+                                width: 100,
+                                child: Align(
+                                  child: Row(
+                                    children: [
+                                      Text("4.9 ",style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w800,
+                                          fontFamily: 'RobotoMono'
+                                      ),),
+                                      Text(" (1.7x )",style: TextStyle(
+                                          color: Colors.black54,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w800,
+                                          fontFamily: 'RobotoMono'
+                                      ),),
+                                    ],
+                                  )
+                                )
+                            ),
+                          ],
+                        )
+                      ],
+                    ),),
+                    SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -82,33 +143,35 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                           children: [
                             IconButton(onPressed: () {}, icon: Icon(Icons.remove_circle_rounded,size: 35,color: Colors.grey,)),
                             SizedBox(
-                              width: 30,
-                              child: Align(
-                                child: Text("2",style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'RobotoMono'
-                                ),textAlign: TextAlign.start),
-                              )
+                                width: 30,
+                                child: Align(
+                                  child: Text("2",style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w800,
+                                      fontFamily: 'RobotoMono'
+                                  ),textAlign: TextAlign.start),
+                                )
                             ),
                             IconButton(onPressed: () {}, icon: Icon(Icons.add_circle,size: 35,color: Colors.orange)),
                           ],
                         )
                       ],
                     ),
-                    SizedBox(height: 50),
+                    SizedBox(height: 20),
                     Text("Mô tả",style: TextStyle(
                         color: Colors.black,
                         fontSize: 22,
                         fontWeight: FontWeight.w800,
                         fontFamily: 'RobotoMono'
                     ),textAlign: TextAlign.start),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
                     Container(
-                      height: MediaQuery.of(context).size.height-550,
+                      height: MediaQuery.of(context).size.height-560,
                       width: MediaQuery.of(context).size.width,
                       child: SingleChildScrollView(
+                        padding: EdgeInsets.only(left: 5,right: 3),
+                        scrollDirection: Axis.vertical,
                         child: Text("Many consumers enjoy a beef burger whenever they get a chance, and many of us have our go-to places for one. However, the results show that quick-service establishments aren’t the only places consumers go for a burger. In fact, many also choose casual or even fine-dining establishments to enjoy a burger."
                             "\n\nMore specifically, the research looked at the quality indicators for burgers and how consumers go about customizing and selecting their burgers when dining out. The research was conducted among 700 consumers who eat beef burgers. Not surprisingly, the most important aspect of a burger is its taste—after all, that is why most of us enjoy them so much. In addition to taste, the overall quality and the value you get for the price you pay is important, as some consumers note",style: TextStyle(
                             color: Colors.black54,
@@ -174,7 +237,7 @@ class _DetailFoodScreenState extends State<DetailFoodScreen> {
                     fontFamily: 'RobotoMono',
                     letterSpacing: 1.5,
                   )),
-              SizedBox(width: 30,),
+              SizedBox(width: 10,),
               Icon(Icons.arrow_circle_right_sharp,size: 35,)// <-- Text// <-- Text
             ],
           ),
